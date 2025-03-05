@@ -1,0 +1,268 @@
+/* founder container */
+.user-founder-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  /* hero container */
+  .user-founder-wrapper,
+  .container3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .hero-container {
+    width: 100%;
+    background: linear-gradient(to bottom, #1e293b, #64748b);
+    display: flex;
+    justify-content: space-between; /* Pushes text and image apart */
+    align-items: flex-end; /* Aligns items to the bottom */
+    height: 900px;
+    padding: 0 5%; /* Adds space around */
+    position: relative; /* Allows absolute positioning inside */
+}
+
+.hero-text {
+    font-size: 100px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-align: left;
+    flex: 5;
+    bottom: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    height: 100%; 
+}
+
+.hero-img {
+  position: absolute;
+  left: 55%;  /* Adjust left positioning to ensure visibility */
+  bottom: 0;
+  max-width: 80%; /* Increase max-width for larger image */
+}
+
+.hero-img img {
+  width: 150%; /* Increase the width beyond its container */
+  height: auto;
+  object-fit: contain;
+}
+
+  /* about container */
+  /* About container */
+.dmam-about-container {
+    max-width: 1200px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+}
+
+.dmam-about-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.dmam-about-1 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.dmam-about-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
+  /* contact container */
+.dmam-contact-container {
+  padding: 32px 12px 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dmam-contact-1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dmam-contact-1 div ul {
+  list-style: none;
+}
+
+.dmam-contact-1 div ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4px;
+  gap: 12px;
+}
+
+.dmam-contact-2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scroll-up icon styles */
+.scroll-up-icon {
+  position: fixed;  /* Change from absolute to fixed for better positioning */
+  bottom: 50px;  /* Adjust vertical position */
+  right: 30px;  /* Move it further to the right */
+  width: 50px;  /* Adjust size */
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background for visibility */
+  border-radius: 50%; /* Make it round */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.scroll-up-icon:hover {
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+}
+
+
+@media (max-width: 768px) {
+  
+  .hero-container {
+    flex-direction: row; /* Stack items vertically */
+    height: auto; /* Adjust height dynamically */
+    text-align: center;
+    padding: 40px 16px; /* Reduce padding for smaller screens */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    font-size: 25px; /* Reduce font size for mobile */
+    text-align: center;
+    font-weight: bold;
+    margin-top: 100px; /* Add space above text */
+  }
+
+  .hero-img {
+    position: absolute; /* Keep absolute positioning if needed */
+    display: flex;
+    justify-content: flex-end; /* Align image container to the end */
+    align-items: flex-end; /* Align items inside the container */
+    width: 100%;
+    max-width: 190px; /* Limit max width for mobile */
+    margin: 200px 0 0 auto;
+  }
+
+  .hero-img img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    margin: 180px 0 0 auto;
+  }
+
+  .dmam-about-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 10px;
+  }
+      
+  .dmam-about-1 img {
+    width: 80%;
+    max-width: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+      
+  .dmam-about-1 div {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    margin: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+      
+  .dmam-about-2 p {
+    font-size: 12px;
+    margin-top: 2px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+      
+  .dmam-contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+    
+  .dmam-contact-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+    
+  .dmam-contact-1 img {
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 120px;
+    margin-left: 3px;
+    transform: scale(2.0);
+  }
+    
+  .dmam-contact-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  .dmam-contact-2 img {
+    width: 100%;
+    max-width: 300px;
+  }
+    
+  .dmam-contact-1 ul {
+    list-style: none;
+    padding: 0;
+  }
+    
+  .dmam-contact-1 ul li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 10px;
+    margin: 8px 0;
+  }
+    
+  .dmam-contact-1 ul li img {
+    width: 20px;
+    height: 20px;
+  } 
+  .scroll-up-icon{
+    width: 50px !important;
+    height: 50px !important;
+  }
+}

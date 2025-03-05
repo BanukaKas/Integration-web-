@@ -3,8 +3,15 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const helmet = require("helmet");
+const bodyParser = require('body-parser');
 const db = require("./utils/db");
 const adminRoutes = require("./Routes/AdminRoutes");
+const userRoutes = require("./Routes/UserRoutes");
+const loginRoutes = require("./Routes/LoginRoutes");
+const fpRoutes = require("./Routes/fpRoutes");
+const otpRoutes = require("./Routes/otpRoutes");
+const cpRoutes = require("./Routes/cpRoutes");
+const authRoutes = require("./Routes/authRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 7000;
@@ -14,6 +21,7 @@ app.use(cors());
 app.use(express.json());
 app.use(helmet()); // Security middleware
 app.use(morgan("dev")); // Logging middleware
+app.use(bodyParser.json());
 
 // Use Admin Routes
 app.use("/api/admin", adminRoutes);
@@ -62,6 +70,33 @@ app.use((err, req, res, next) => {
     console.error("Unhandled Error:", err);
     res.status(500).json({ message: "Internal Server Error" });
 });
+
+// API Route to Store Code in Database
+app.post("/api/enter-code", (req, res) => {
+    const { code } = req.body;
+
+    if (!code) {
+        return res.status(400).json({ error: "Code is required" });
+    }
+
+    const query = "INSERT INTO codes (code) VALUES (?)";
+
+    db.query(query, [code], (err, result) => {
+        if (err) {
+            console.error("Error inserting code:", err);
+            return res.status(500).json({ error: "Database error" });
+        }
+        res.status(201).json({ message: "Code saved successfully", id: result.insertId });
+    });
+});
+
+// Routes
+app.use('/api/user', userRoutes);
+app.use('/api/auth', fpRoutes);
+app.use('/api/otp', otpRoutes);
+app.use('/api/password', cpRoutes);
+app.use('/api/user', loginRoutes);
+app.use('/api/auth', authRoutes);
 
 // Start Server
 app.listen(PORT, () => {

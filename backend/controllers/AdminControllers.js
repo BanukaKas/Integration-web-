@@ -1,7 +1,7 @@
-const db = require("../utils/db");
+import db from '../utils/db.js';
 
 // Controller to get all job postings, ensuring only one instance per job_title and state is returned
-const getAllJobs = (req, res) => {
+export const getAllJobs = (req, res) => {
     const query = 
         `SELECT pj.*, 
                (SELECT COUNT(*) 
@@ -22,7 +22,7 @@ const getAllJobs = (req, res) => {
 };
 
 // Controller to post a new job
-const postJob = (req, res) => {
+export const postJob = (req, res) => {
     const { job_title, state, salary, currency, location, description } = req.body;
     
     if (!job_title || !state || !salary || !currency || !location || !description) {
@@ -40,7 +40,7 @@ const postJob = (req, res) => {
 };
 
 // Controller to delete a job posting
-const deleteJob = (req, res) => {
+export const deleteJob = (req, res) => {
     const { id } = req.params;
     
     // First, check if the job exists in the database
@@ -68,7 +68,7 @@ const deleteJob = (req, res) => {
 };
 
 // Get all posted jobs
-const getPostedJobs = (req, res) => {
+export const getPostedJobs = (req, res) => {
     const sql = "SELECT * FROM postedjobs ORDER BY id DESC";
     db.query(sql, (err, results) => {
         if (err) {
@@ -80,7 +80,7 @@ const getPostedJobs = (req, res) => {
 };
 
 // Get total applications count
-const getApplicationsCount = (req, res) => {
+export const getApplicationsCount = (req, res) => {
     const sql = "SELECT COUNT(*) AS total FROM applyjob";
     db.query(sql, (err, results) => {
         if (err) {
@@ -92,7 +92,7 @@ const getApplicationsCount = (req, res) => {
 };
 
 // Get applications for a specific job (FIXED)
-const getApplicationsByJobId = (req, res) => {
+export const getApplicationsByJobId = (req, res) => {
     const { jobId } = req.params;
 
     if (!jobId) {
@@ -113,14 +113,4 @@ const getApplicationsByJobId = (req, res) => {
         }
         res.status(200).json(results);
     });
-};
-
-// Export all functions
-module.exports = { 
-    getAllJobs, 
-    postJob, 
-    deleteJob, 
-    getPostedJobs, 
-    getApplicationsCount, 
-    getApplicationsByJobId 
 };

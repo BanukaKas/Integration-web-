@@ -3,12 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../../css/NavBar.css';
 import logo from '../../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    const handleSigninClick = () => {
+        navigate('/user-signin');
     };
 
     return (
@@ -30,7 +36,7 @@ export default function Navbar() {
                 </ul>
 
                 {/* Sign In Button */}
-                <button className="user-navbar-signin">Sign In</button>
+                <button className="user-navbar-signin" onClick={handleSigninClick}>Sign In</button>
 
                 {/* Burger Icon for Mobile */}
                 <div className="user-navbar-burger" onClick={toggleSidebar}>

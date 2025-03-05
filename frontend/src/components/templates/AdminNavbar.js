@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../../css/AdminNavBar.css';
@@ -7,9 +7,14 @@ import logo from '../../assets/logo.png';
 
 export default function AdminNavbar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    const handleSigninClick = () => {
+        navigate('/user-signin');
     };
 
     return (
@@ -32,7 +37,7 @@ export default function AdminNavbar() {
                 </ul>
 
                 {/* Sign In Button */}
-                <button className="admin-navbar-signin">Sign In</button>
+                <button className="admin-navbar-signin" onClick={handleSigninClick}>Sign In</button>
 
                 {/* Burger Icon for Mobile */}
                 <div className="admin-navbar-burger" onClick={toggleSidebar}>
