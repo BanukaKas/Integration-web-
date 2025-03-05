@@ -1,0 +1,92 @@
+.dmam-testimonial-container {
+  background: url('../assets/testimonial_bg.png') no-repeat center;
+  background-size: cover;
+}
+
+.dmam-section {
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  
+}
+
+.dmam-title {
+  font-size: 40px;
+  font-weight:bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.dmam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dmam-card {
+  background: linear-gradient(to bottom, #BBE1FA, #608BC1, #2D425B);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 15px;
+  border: #205295 1px solid;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align:left;
+  overflow: hidden;
+}
+
+/* Quote */
+.dmam-quote-a{
+  font-weight: bold;
+  font-size: 50px;
+
+ }
+.dmam-quote {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: -60px;
+  margin-left: 40px;
+}
+/* Profile Section */
+.dmam-profile {
+  display: flex;
+  align-items: center; /* Aligns items in a row */
+  justify-content: flex-start; /* Aligns to the left */
+  margin-top: 15px;
+  padding: 1px;
+  border-radius: 30px;
+  background: linear-gradient(to right,#CBDCEB, #133E87); /* Gradient color */
+  color: black;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+ 
+}
+
+/* Profile Image */
+.dmam-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-right: 10px; /* Creates spacing between image and text */
+}
+
+/* Name & Role */
+.dmam-info {
+  text-align: center; /* Aligns text to the left */
+}
+
+.dmam-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+}
+
+.dmam-role {
+  font-size: 14px;
+  color: black;
+}

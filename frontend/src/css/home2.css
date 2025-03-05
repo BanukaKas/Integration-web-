@@ -1,0 +1,815 @@
+.user-home-hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.user-home-hero-title{
+    margin-top: 200px;
+    margin-left: 50px;
+
+}
+
+.user-home-hero-image{
+    margin-left: -500px;
+    margin-top:-100px ;
+}
+
+.user-home-hero-image img{
+    width: 1589px;
+}
+
+.user-home-industries-title{
+    text-align: left;
+    font-size: 64px;
+}
+
+/* Container for horizontal scrolling */
+.dmam-industries-scroll {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+/* Flexbox container to align images in a row */
+.dmam-industries-container {
+    display: flex;
+    gap: 40px; /* Adjust space between cards */
+}
+
+/* Individual industry cards */
+.dmam-industry-card {
+    position: relative;
+    min-width: 250px; /* Fixed width to make them stay in a row */
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Industry images */
+.dmam-industry-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+/* Hidden text overlay */
+.dmam-industry-card p {
+    position: absolute;
+    top: 0; /* Changed to 0 */
+    left: 0;
+    width: 100%;
+    height: 100%; /* Changed to 100% */
+    padding: 20px; /* Adjust padding as needed */
+    background: #133E87;
+    color: white;
+    font-size: 10px;
+    display: flex; /* Enable flexbox for vertical centering */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    text-align: center; /* Center text within the paragraph */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.dmam-industry-card strong{
+    font-size: 20px;
+}
+
+.dmam-industry-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px; /* Adjust as needed */
+    /* Optional: Add a subtle transition for a smoother appearance */
+    transition: background-color 0.3s ease;
+}
+
+
+/* Show text on hover */
+.dmam-industry-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dmam-industry-card p[data-transition-direction="down"] {
+    transform: translateY(-20px); /* Initial position (top) */
+}
+
+.dmam-industry-card:hover p[data-transition-direction="down"] {
+    transform: translateY(0); /* Final position */
+}
+
+.dmam-industry-card p[data-transition-direction="left"] {
+    transform: translateX(-20px); /* Initial position (right) */
+}
+
+.dmam-industry-card:hover p[data-transition-direction="left"] {
+    transform: translateX(0); /* Final position */
+}
+
+.dmam-industry-card p[data-transition-direction="right"] {
+    transform: translateX(20px); /* Initial position (left) */
+}
+
+.dmam-industry-card:hover p[data-transition-direction="right"] {
+    transform: translateX(0); /* Final position */
+}
+
+/* Hide the horizontal scrollbar but allow scrolling */
+.dmam-industries-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/*gradient area*/
+
+.dmam-client-scroll {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+/* Flexbox container to align images in a row */
+.dmam-client-container {
+    display: flex;
+    gap: 40px; /* Adjust space between cards */
+}
+
+/* Hide the horizontal scrollbar but allow scrolling */
+.dmam-client-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.dmam-gradient-section {
+    background-color: #DEF2FF;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.dmam-clients-title {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.dmam-clients-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/*im*/
+
+.dmam-inquiries-section {
+    background-color:#DEF2FF;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dmam-inquiries-container {
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #a3d9ff;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(163, 217, 255, 0.6);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Create the overlapping border effect */
+.dmam-inquiries-container::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Moves the border slightly up */
+    left: 15px; /* Moves the border slightly left */
+    right: 0px; /* Moves the border slightly right */
+    bottom: -8px; /* Moves the border slightly down */
+    border: 3px solid #a3d9ff; /* Thicker border */
+    border-radius: 25px; /* Make it match the container */
+    opacity: 0.5;
+    width: 700px;
+    height: 550px;
+    pointer-events: none; /* Prevents interference with input fields */
+}
+
+
+.dmam-inquiries-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.dmam-inquiries-subtitle {
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 20px;
+    margin-left: 356px;
+    margin-top: -35px;
+    text-align: left;
+    
+}
+
+.dmam-inquiries-form {
+    background-color: #BBE1FA;
+    opacity: 0.6;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    gap: 15px;
+    margin-left: 15px;
+}
+
+.dmam-inquiries-form input,
+.dmam-inquiries-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #133E87 ;
+    border-radius: 30px;
+    background-color: #BBE1FA;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #000;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dmam-inquiries-form input:focus,
+.dmam-inquiries-form textarea:focus {
+    border-color: #005fa3;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 119, 204, 0.4);
+}
+
+.dmam-inquiries-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.dmam-inquiries-form .dmam-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.dmam-inquiries-form .dmam-input-group input {
+    flex: 1;
+}
+
+.dmam-inquiries-form button {
+    background-color: transparent;
+    color: #000;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.dmam-inquiries-form button:hover {
+    background-color: #0077cc;
+    color: white;
+    border-color: #0077cc;
+}
+
+/* About Us Section */
+
+#about-us.user-home-about-section {
+    display: flex;
+    height: 100vh;
+    padding: 50px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Space between text and image */
+    padding: 50px;
+    width: 100%;
+   
+    position: relative;
+    flex-direction: row-reverse;
+    background-color: #F2F1F1;
+}
+
+.user-home-about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    flex-direction: row-reverse;
+    background-color: #F2F1F1;
+}
+
+.user-home-about-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.user-home-about-title {
+    font-weight: 650;
+    line-height: 116.63px;
+    height: 116px;
+    font-size: 64px;
+   
+}
+
+.user-home-about-h4 {
+    font-size: 32px;
+    margin-top: 10px;
+   font-weight:500;
+}
+
+.user-home-about-p1 {
+    font-size: 24px;
+    font-family: 'ROBOTO';
+    line-height: 28.13px;
+    font-weight: 400;
+}
+/* Right Side - Image */
+.user-home-about-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main About Us Image */
+.user-home-about-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 22px;
+    object-fit: cover;
+}
+.user-home-about-logo {
+    position: absolute;
+    top: -70px;
+    right: 70px;
+    width: 150px;
+    height: 150px;
+   
+    border: 5px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    #about-us.user-home-about-section {
+        flex-direction: column; /* Stack content on mobile */
+        height: auto;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .user-home-about-container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .user-home-about-title {
+        font-size: 28px;
+        line-height: normal;
+    }
+
+    .dmam-clients-title {
+        font-size: 28px;
+    }
+
+    .user-home-about-h4 {
+        font-size: 24px;
+        margin-top: -90px;
+    }
+
+    .user-home-about-p1 {
+        font-size: 16px;
+        line-height: 24px;
+        width: 343px;
+        margin-bottom: 50px;
+        
+    }
+
+.user-home-about-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+}
+
+.user-home-about-img {
+       
+    width: 249px;
+    height: 244px;
+    top: 1259.03px;
+    left: 85px;
+    border-radius: 22px;
+    margin-bottom: 160px;
+        
+}
+
+.user-home-about-logo {
+    right: 90px;
+        width: 150px;
+        height: 131px;
+    
+}
+}
+
+.user-home-feedback-section {
+  
+    text-align: center;
+    background-color:#F2F1F1 ;
+ 
+ 
+}
+
+.user-home-feedback-title-container {
+    position: relative;
+    text-align: center;
+}
+
+.user-home-feedback-wave {
+    width: 100%;
+    height: auto;
+}
+
+.user-home-feedback-title {
+    position: relative;
+    margin-top: -180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: -50px;
+   
+    padding-top: 60px;
+    background-color: white;
+}
+
+.testimonial {
+    width: 30%;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgb(0 0 0 / 10%);
+    margin-bottom: 50px;
+    height: 600px;
+}
+
+.testimonial-logo-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.testimonial-logo {
+    height: auto;
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+.testimonial h3 {
+    font-size: 22px;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+
+.testimonial p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {  
+    .user-home-hero-title{
+        margin-top: 100px;
+    }
+
+    .user-home-hero-image{
+        display: none;
+    }
+
+    .user-home-industries-title{
+        font-size: 28px;
+    }    
+    
+    /* Industries Section */
+    .dmam-industries-scroll {
+        overflow-x: auto;
+        display: flex;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+    }
+
+    .dmam-industries-container {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+
+    .dmam-industry-card {
+        min-width: 180px; /* Smaller cards for better fit */
+        height: 180px;
+        scroll-snap-align: start;
+    }
+
+    /* Hidden text overlay */
+    .dmam-industry-card p {
+        position: absolute;
+        top: 0; /* Changed to 0 */
+        left: 0;
+        width: 100%;
+        height: 100%; /* Changed to 100% */
+        padding: 20px; /* Adjust padding as needed */
+        background: #133E87;
+        color: white;
+        font-size: 7px;
+        display: flex; /* Enable flexbox for vertical centering */
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center; /* Vertically center content */
+        align-items: center; /* Horizontally center content */
+        text-align: center; /* Center text within the paragraph */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .dmam-industry-card strong{
+        font-size: 15px;
+    } 
+
+    /* Fix Inquiry Section */
+    .dmam-inquiries-section {
+        padding: 20px;
+    }
+
+    .dmam-inquiries-container {
+        width: 95%;
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+    }
+
+    /* Fix overlapping border effect */
+    .dmam-inquiries-container::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 5px;
+        right: 5px;
+        bottom: -10px;
+        border: 2px solid #a3d9ff;
+        border-radius: 20px;
+        width: calc(100% + 10px);
+        height: calc(100% + 20px);
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    /* Inquiry Form Adjustments */
+    .dmam-inquiries-form {
+        padding: 10px;
+    }
+
+    .dmam-inquiries-form input,
+    .dmam-inquiries-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .dmam-inquiries-form button {
+        width: 100%;
+    }
+
+    /* Fix subtitle alignment */
+    .dmam-inquiries-subtitle {
+        font-size: 14px;
+        margin-left: 0;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        #about-us.user-home-about-section {
+            flex-direction: column; /* Stack content on mobile */
+            height: auto;
+            padding: 30px;
+            gap: 30px;
+        }
+    
+        .user-home-about-container {
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+    
+        .user-home-about-title {
+            font-size: 28px;
+            line-height: normal;
+        }
+    
+        .user-home-about-h4 {
+            font-size: 24px;
+            margin-top: -90px;
+        }
+    
+        .user-home-about-p1 {
+            font-size: 16px;
+            line-height: 24px;
+            width: 343px;
+            margin-bottom: 50px;
+            
+        }
+    
+    .user-home-about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+    }
+    
+    .user-home-about-img {
+           
+        width: 249px;
+        height: 244px;
+        top: 1259.03px;
+        left: 85px;
+        border-radius: 22px;
+        margin-bottom: 160px;
+            
+    }
+    
+    .user-home-about-logo {
+        right: 90px;
+            width: 150px;
+            height: 131px;
+        
+    }
+    }
+    
+    .user-home-feedback-section {
+      
+        text-align: center;
+        background-color:#F2F1F1 ;
+     
+     
+    }
+    
+    .user-home-feedback-title-container {
+        position: relative;
+        text-align: center;
+    }
+    
+    .user-home-feedback-wave {
+        width: 100%;
+        height: auto;
+    }
+    
+    .user-home-feedback-title {
+        position: relative;
+        margin-top: -180px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 64px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-transform: uppercase;
+    }
+    
+    .testimonial-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: -50px;
+       
+        padding-top: 60px;
+        background-color: white;
+    }
+ 
+    .testimonial {
+        width: 30%;
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgb(0 0 0 / 10%);
+        margin-bottom: 50px;
+        height: 600px;
+    }
+    
+    .testimonial-logo-container {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-logo {
+        height: auto;
+        max-width: 120px;
+        margin-bottom: 10px;
+    }
+    
+    .testimonial h3 {
+        font-size: 22px;
+        margin: 10px 0 5px;
+        color: #333;
+    }
+    
+    
+    .testimonial p {
+        font-size: 16px;
+        color: #666;
+        margin: 5px 0;
+    }
+    @media (max-width: 768px) {
+            .user-home-feedback-title-container {
+                position: relative;
+                text-align: center;
+                margin-top: 50px;
+                width: 100vw;
+            }
+            
+            .user-home-feedback-title {
+                font-size: 28px;
+                
+            }
+            
+            .testimonial-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin-top: -150px;
+                padding-top: 150px;
+            }
+            
+            .testimonial {
+                width: 90%;
+                height: auto;
+                padding: 15px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            .testimonial-logo {
+                max-width: 70px;
+                height: auto;
+            }
+            
+            .testimonial h2 {
+                font-size: 16px;
+                font-weight: 500;
+            }
+            
+            .testimonial h3 {
+                font-size: 14px;
+                font-weight: 400;
+            }
+            
+            .testimonial p {
+                font-size: 14px;
+                line-height: 1.5;
+                padding: 0 10px;
+            }
+        
+    }
+}
