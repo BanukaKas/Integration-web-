@@ -1,6 +1,6 @@
-import db from '../utils/db.js';
+const db = require('../utils/db.js');
 
-export const verifyOTP = async (req, res) => {
+const verifyOTP = async (req, res) => {
     const { email, otp } = req.body;
 
     if (!email || !otp) {
@@ -26,4 +26,8 @@ export const verifyOTP = async (req, res) => {
 
         res.status(200).json({ message: 'OTP verified successfully' });
     });
+};
+
+module.exports = {
+    verifyOTP,
 };

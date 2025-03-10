@@ -11,6 +11,7 @@ import Signup1 from './pages/User/Signup';
 import Signin from './pages/User/Signin';
 import ForgotPassword from './pages/User/ForgotPw';
 import ChangePassword from './pages/User/ChangePw';
+import FounderView from './pages/FounderView'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/user-signin" element={<Signin />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/changepassword" element={<ChangePassword />} />
+          <Route path="/founderview" element={<FounderView/>} />
         </Routes>
       </Router>
   );

@@ -1,7 +1,7 @@
-import db from "../utils/db.js";
-import bcrypt from "bcryptjs";
+const db = require("../utils/db.js");
+const bcrypt = require("bcryptjs");
 
-export const registerUser = async (req, res) => { 
+const registerUser = async (req, res) => { 
     const { name, email, password, confirmPassword, isAdmin = false } = req.body;
 
     if (!name || !email || !password || !confirmPassword) {
@@ -43,4 +43,8 @@ export const registerUser = async (req, res) => {
         console.error("Unexpected error:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
+};
+
+module.exports = {
+    registerUser
 };

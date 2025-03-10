@@ -1,31 +1,19 @@
-import { DataTypes } from 'sequelize';
-import db from '../utils/db.js';
+const db = require('../utils/db.js');
 
-const User = db.define('User', {
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+const User = {
+    findByEmail: (email, callback) => {
+        const sql = 'SELECT * FROM users WHERE email = ?';
+        db.query(sql, [email], callback);
     },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
+    updateOTP: (email, otp, callback) => {
+        const sql = 'UPDATE users SET otp = ? WHERE email = ?';
+        db.query(sql, [otp, email], callback);
     },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+    createUser: (user, callback) => {
+        const sql = 'INSERT INTO users (name, email, password, isAdmin) VALUES (?, ?, ?, ?)';
+        db.query(sql, [user.name, user.email, user.password, user.isAdmin], callback);
     },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    isAdmin: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-    }
-}, {
-    timestamps: true
-});
+    // Add other methods as needed
+};
 
-export default User;
+module.exports = User;

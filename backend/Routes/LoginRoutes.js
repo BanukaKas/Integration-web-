@@ -1,5 +1,5 @@
-import express from "express";
-import { loginUser, googleLogin } from "../controllers/LoginControllers.js";
+const express = require("express");
+const { loginUser, googleLogin } = require("../controllers/LoginControllers.js");
 
 const router = express.Router();
 
@@ -9,4 +9,4 @@ router.post("/login", loginUser);
 // Google Sign-In
 router.post("/google-login", googleLogin);
 
-export default router;
+module.exports = router;

@@ -1,7 +1,7 @@
-import db from '../utils/db.js';
-import bcrypt from 'bcrypt';
+const db = require('../utils/db.js');
+const bcrypt = require('bcrypt');
 
-export const changePassword = async (req, res) => {
+const changePassword = async (req, res) => {
     const { email, newPassword } = req.body;
 
     if (!email || !newPassword) {
@@ -27,4 +27,8 @@ export const changePassword = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
     }
+};
+
+module.exports = {
+    changePassword,
 };

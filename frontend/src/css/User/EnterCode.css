@@ -1,4 +1,3 @@
-
 /* General Styling */
 body {
     font-family: Arial, sans-serif;
@@ -8,10 +7,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  
-  /* Container Layout */
-  .container-epwsk {
+}
+
+/* Container Layout */
+.epwsk-container {
     display: flex;
     width: 100%;
     max-width: 1000px;
@@ -22,79 +21,74 @@ body {
     overflow: hidden;
     margin-top: 200px; 
     display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 2050vh;
-      
-  }
-  
-  
-  /* Left Section - Image as Background */
-  .left-section-epwsk {
+    justify-content: center;
+    align-items: center;
+    height: 2050vh;
+}
+
+/* Left Section - Image as Background */
+.epwsk-left-section {
     flex: 1;
     background: url('../../assets/images.png') no-repeat center center;
     display: flex;
     transform: scaleX(-1); /* This flips the image horizontally */
-    
-  }
-  
-  
-  .left-section-epwsk img {
+}
+
+.epwsk-left-section img {
     overflow: hidden;
     background: #d1d5db;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  /* Right Section - Form */
-  .right-section-epwsk {
+}
+
+/* Right Section - Form */
+.epwsk-right-section {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #ffffff;
     padding: 20px;
-  }
-  
-  .form-card-epwsk {
+}
+
+.epwsk-form-card {
     color: black;
     width: 100%;
     max-width: 320px;
     text-align: center;
-    
-  }
-  .design-container-epwsk{
-    
+}
+
+.epwsk-design-container {
     position: absolute;
     bottom: 561px;
     top:px;   /* Position the logo 10px from the top */
     left: 1085px; 
-  }
-  .design-container-epwsk img {
+}
+
+.epwsk-design-container img {
     width: 150px; /* Adjust width as needed */
     height: auto;
-  }
-  
-  .logo-container-epwsk {
+}
+
+.epwsk-logo-container {
     position: absolute;
     bottom: 650px;
     top:px;   /* Position the logo 10px from the top */
     left: 850px;  /* Position the logo 10px from the left */
-  }
-  
-  .logo-container-epwsk img {
+}
+
+.epwsk-logo-container img {
     width: 60px; /* Set the logo size (adjust as needed) */
     height: auto; /* Maintain aspect ratio */
-  }
-  
-  h4 {
+}
+
+h4 {
     margin-bottom: 20px;
     text-decoration: double;
-    
-  }
-  
-  input {
+}
+
+input {
     width: 90%;
     padding: 5px;
     color: black;
@@ -102,16 +96,15 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #c6d7f7;
-    
-  }
-  /* Change placeholder text color to black and reduce font size */
-   input::placeholder {
+}
+
+/* Change placeholder text color to black and reduce font size */
+input::placeholder {
     color: black;  /* Change placeholder text color to black */
     font-size: 14px; /* Make the placeholder text smaller */
-  }
-  
-  
-  button {
+}
+
+button {
     width: 90%;
     padding: 5px;
     background: #1e3a8a;
@@ -119,51 +112,43 @@ body {
     border: none;
     border-radius: 20px;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background: #102a65;
-  }
-  
-  
-  
-  
-  
-  
-  
-  .left-section-epwsk {
+}
+
+.epwsk-left-section {
     position: relative;
     width: 100%;
     height: 550px;
-  }
-  
-  .left-section-epwsk img {
+}
+
+.epwsk-left-section img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .left-section-epwsk .mobile-img {
+}
+
+.epwsk-left-section .mobile-img {
     display: none; /* Hide mobile image by default */
-  }
-  
-  @media screen and (max-width: 480px) {
-    .left-section-epwsk .desktop-img {
-      display: none; /* Hide desktop image on mobile */
+}
+
+@media screen and (max-width: 480px) {
+    .epwsk-left-section .desktop-img {
+        display: none; /* Hide desktop image on mobile */
     }
-  
-    .left-section-epwsk .mobile-img {
-      display: block; /* Show mobile image on mobile view */
+
+    .epwsk-left-section .mobile-img {
+        display: block; /* Show mobile image on mobile view */
     }
-  }
-  
-  
-  
-  @media screen and (max-width: 480px) {
-    .left-section-epwsk {
-      background-image: url("../../assets/mobile-extra-img.png"); /* Change image for mobile */
-  }
-    .container-epwsk {
+}
+
+@media screen and (max-width: 480px) {
+    .epwsk-left-section {
+        background-image: url("../../assets/mobile-extra-img.png"); /* Change image for mobile */
+    }
+    .epwsk-container {
         flex-direction: column; /* Stack sections vertically */
         width: 95%;
         height: auto;
@@ -171,22 +156,21 @@ body {
         margin-top: 70px;
         position: relative; /* Ensure positioning context */
     }
-  
-    .left-section-epwsk {
+
+    .epwsk-left-section {
         flex: none;
         height: 350px;
         order: -1; /* Moves the left image to the top */
     }
-  
-    .left-section-epwsk img {
+
+    .epwsk-left-section img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    
-  
+
     /* Curve Image Positioning */
-    .design-container-epwsk {
+    .epwsk-design-container {
         position: absolute;
         bottom: -20px; /* Moves it below the left-section */
         left: 50%;
@@ -194,43 +178,42 @@ body {
         width: 100%; /* Adjust width as needed */
         z-index: 2; /* Ensure it stays above other elements */
     }
-  
-    .design-container-epwsk img {
+
+    .epwsk-design-container img {
         width: 0%;
         height: auto;
     }
-  
-    .right-section-epwsk {
+
+    .epwsk-right-section {
         flex: none;
         padding: 15px;
         position: relative;
         z-index: 3; /* Ensure form stays on top */
     }
-  
-    .form-card-epwsk {
+
+    .epwsk-form-card {
         max-width: 100%;
     }
-  
+
     /* Fix logo positioning */
-    .logo-container-epwsk {
+    .epwsk-logo-container {
         position: absolute;
         top: -300px; /* Adjust if needed */
         left: 20%;
         transform: translateX(-50%);
         width: -250px;
     }
-  
-    .logo-container-epwsk img {
+
+    .epwsk-logo-container img {
         width: 50px;
     }
-  
+
     input, button {
         width: 100%;
         font-size: 14px;
     }
-  
+
     h4 {
         font-size: 16px;
     }
-  }
-  
+}

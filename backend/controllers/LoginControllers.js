@@ -1,7 +1,7 @@
-import db from "../utils/db.js";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import { OAuth2Client } from "google-auth-library";
+const db = require("../utils/db.js");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const { OAuth2Client } = require("google-auth-library");
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
@@ -15,7 +15,7 @@ const generateToken = (user) => {
 };
 
 // Regular Email/Password Login
-export const loginUser = async (req, res) => {
+const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -55,7 +55,7 @@ export const loginUser = async (req, res) => {
 };
 
 // Google Sign-In
-export const googleLogin = async (req, res) => {
+const googleLogin = async (req, res) => {
   const { token } = req.body;
 
   if (!token) {
@@ -125,4 +125,9 @@ export const googleLogin = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+};
+
+module.exports = {
+  loginUser,
+  googleLogin
 };

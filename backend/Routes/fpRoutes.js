@@ -1,8 +1,8 @@
-import express from 'express';
-import { forgotPassword } from '../controllers/fpController.js'; 
+const express = require('express');
+const { forgotPassword } = require('../controllers/fpController.js');
 
 const router = express.Router();
 
 router.post('/forgotpassword', forgotPassword);
 
-export default router;
+module.exports = router;

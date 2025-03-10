@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const helmet = require("helmet");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const db = require("./utils/db");
 const adminRoutes = require("./Routes/AdminRoutes");
 const userRoutes = require("./Routes/UserRoutes");
@@ -26,11 +26,11 @@ app.use(bodyParser.json());
 // Use Admin Routes
 app.use("/api/admin", adminRoutes);
 app.use("/admin", adminRoutes); // Frontend admin route
-app.use("/api", adminRoutes);  // API admin route
+app.use("/api", adminRoutes); // API admin route
 
 // Test Route
 app.get("/", (req, res) => {
-    res.send("Backend is running!");
+  res.send("Backend is running!");
 });
 
 // Fetch all job postings

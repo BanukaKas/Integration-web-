@@ -27,6 +27,7 @@ export default function Footer() {
                             <li><a href="/careers">Careers</a></li>
                             <li><a href="/testimonials">Testimonials</a></li>
                             <li><a href="/our-journey">Our Journey</a></li>
+                            <li><a href="/founderview">Founder View</a></li>
                         </ul>
                     </div>
 

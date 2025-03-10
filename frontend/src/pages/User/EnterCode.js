@@ -141,22 +141,22 @@ const EnterCode = () => {
   };
 
   return (
-    <div className="container-epwsk">
+    <div className="epwsk-container">
       {/* Left Section - Image */}
-      <div className="left-section-epwsk">
+      <div className="epwsk-left-section">
         <img src={desktopImage} alt="Desktop View" className="desktop-img" />
         <img src={mobileImage} alt="Mobile View" className="mobile-img" />
       </div>
 
       {/* Right Side - Input Form */}
-      <div className="right-section-epwsk">
-        <div className="logo-container-epwsk">
+      <div className="epwsk-right-section">
+        <div className="epwsk-logo-container">
           <img src="logo.png" alt="Logo" />
         </div>
-        <div className="design-container-epwsk">
+        <div className="epwsk-design-container">
           <img src={design} alt="Design" />
         </div>
-        <div className="form-card-epwsk">
+        <div className="epwsk-form-card">
           <h4><b>Enter Your Code</b></h4>
           <form onSubmit={handleSubmit}>
             <input

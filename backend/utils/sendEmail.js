@@ -1,9 +1,9 @@
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
+const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
-export const sendEmail = async (email, otp) => {
+const sendEmail = async (email, otp) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -29,5 +29,4 @@ export const sendEmail = async (email, otp) => {
     }
 };
 
-
-export default sendEmail;
+module.exports = sendEmail;

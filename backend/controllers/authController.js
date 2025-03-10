@@ -1,12 +1,12 @@
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import User from '../models/User.js';
-import transporter from '../utils/sendEmail.js';
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const sendEmail = require('../utils/sendEmail');
 
 const generateOTP = () => Math.floor(100000 + Math.random() * 900000).toString();
 
 // **Send OTP to Email**
-export const forgotPassword = (req, res) => {
+const forgotPassword = (req, res) => {
   const { email } = req.body;
   const otp = generateOTP();
 
@@ -24,7 +24,7 @@ export const forgotPassword = (req, res) => {
         text: `Your OTP for password reset is: ${otp}`,
       };
 
-      transporter.sendMail(mailOptions, err => {
+      sendEmail(mailOptions, err => {
         if (err) return res.status(500).json({ message: 'Error sending OTP' });
         res.json({ message: 'OTP sent successfully' });
       });
@@ -33,7 +33,7 @@ export const forgotPassword = (req, res) => {
 };
 
 //  **Verify OTP**
-export const verifyOTP = (req, res) => {
+const verifyOTP = (req, res) => {
   const { email, otp } = req.body;
 
   User.verifyOTP(email, otp, (err, results) => {
@@ -46,7 +46,7 @@ export const verifyOTP = (req, res) => {
 };
 
 // **Reset Password**
-export const resetPassword = (req, res) => {
+const resetPassword = (req, res) => {
   const { email, newPassword, token } = req.body;
 
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
@@ -62,4 +62,10 @@ export const resetPassword = (req, res) => {
       });
     });
   });
+};
+
+module.exports = {
+  forgotPassword,
+  verifyOTP,
+  resetPassword
 };
